@@ -56,16 +56,17 @@ footer {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  display: grid;
+  gap: 12px;
 }
 
-.stack h3 {
-  color: #333;
+.stack .item h3 {
   font-size: 1.2rem;
-  margin-bottom: 8px;
+  margin: 0;
+  color: #222;
 }
 
-.stack p {
-  color: #555;
-  line-height: 1.5;
-  margin-bottom: 12px;
+.stack .item p {
+  margin: 4px 0 10px;
+  color: #444;
 }
