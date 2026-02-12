@@ -50,23 +50,3 @@ footer {
   color: white;
   margin-top: 40px;
 }
-
-.stack {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  display: grid;
-  gap: 12px;
-}
-
-.stack .item h3 {
-  font-size: 1.2rem;
-  margin: 0;
-  color: #222;
-}
-
-.stack .item p {
-  margin: 4px 0 10px;
-  color: #444;
-}
