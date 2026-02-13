@@ -25,9 +25,16 @@ header p {
 }
 
 section {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 20px;
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  margin-bottom: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 h2 {
