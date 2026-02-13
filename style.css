@@ -152,30 +152,3 @@ body {
   color: #1e293b;
   transition: background 0.3s ease, color 0.3s ease;
 }
-
-/* Modo oscuro */
-body.dark {
-  background-color: #0f172a;
-  color: #e2e8f0;
-}
-
-body.dark h2 {
-  color: #f1f5f9;
-}
-
-.dark-btn {
-  margin-top: 20px;
-  padding: 10px 18px;
-  border: none;
-  border-radius: 20px;
-  background: linear-gradient(90deg, #4f46e5, #2563eb);
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.dark-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
