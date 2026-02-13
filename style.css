@@ -138,3 +138,9 @@ footer {
 .badge i {
   margin-right: 6px;
 }
+
+p {
+  line-height: 1.6;
+  font-size: 15px;
+  color: #374151;
+}
