@@ -35,7 +35,8 @@ h2 {
   margin-bottom: 20px;
   position: relative;
   display: inline-block;
-  color: #4f46e5; /* violeta elegante */
+  color: #1e293b; /* azul oscuro elegante */
+  font-weight: 600;
 }
 
 h2::after {
