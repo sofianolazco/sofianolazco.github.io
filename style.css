@@ -146,3 +146,19 @@ p {
   font-size: 15px;
   color: #374151;
 }
+
+body {
+  background-color: #f8fafc;
+  color: #1e293b;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Modo oscuro */
+body.dark {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+body.dark h2 {
+  color: #f1f5f9;
+}
