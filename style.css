@@ -153,14 +153,29 @@ body {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Modo oscuro */
+/* 🌙 MODO OSCURO COMPLETO */
+
 body.dark {
   background-color: #0f172a;
   color: #e2e8f0;
 }
 
-body.dark h2 {
+/* Títulos */
+body.dark h1,
+body.dark h2,
+body.dark h3 {
   color: #f1f5f9;
+}
+
+/* Párrafos y listas */
+body.dark p,
+body.dark li {
+  color: #cbd5e1;
+}
+
+/* Secciones como tarjetas */
+body.dark section {
+  background-color: #1e293b;
 }
 
 .dark-btn {
