@@ -76,18 +76,19 @@ footer {
 
 .btn {
   display: inline-block;
-  margin-top: 20px;
-  padding: 12px 20px;
-  background-color: #2563eb;
-  color: white;
+  margin-top: 25px;
+  padding: 12px 24px;
+  background-color: white;
+  color: #1e3a8a;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 30px;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .btn:hover {
-  background-color: #1d4ed8;
+  background-color: #e0f2fe;
+  transform: translateY(-2px);
 }
 
 .stack {
