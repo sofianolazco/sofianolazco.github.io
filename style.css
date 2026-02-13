@@ -243,3 +243,9 @@ body.dark article a {
   color: #93c5fd; /* azul claro para enlaces */
 }
 
+/* 🌙 Badges modo oscuro – fondo claro elegante */
+body.dark .badge {
+  background-color: #f1f5f9;
+  color: #1e293b;
+  font-weight: 600;
+}
