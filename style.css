@@ -224,3 +224,22 @@ body.dark .dark-btn {
   background: rgba(255, 255, 255, 0.1);
   color: #f1f5f9;
 }
+
+/* 🌙 Ajustes de contraste para modo oscuro */
+body.dark article,
+body.dark .stack-item {
+  background-color: #1e2a41;  /* oscuro elegante */
+  color: #e0e7ff;            /* texto claro pero no tan blanquísimo */
+}
+
+body.dark article p,
+body.dark article a,
+body.dark .stack-item p,
+body.dark .stack-item .badges .badge {
+  color: #d1d5db;  /* gris claro legible */
+}
+
+body.dark article a {
+  color: #93c5fd; /* azul claro para enlaces */
+}
+
