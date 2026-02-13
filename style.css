@@ -68,5 +68,18 @@ footer {
 }
 
 .stack {
-  background: red;
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  margin-top: 20px;
+}
+
+.stack h3 {
+  margin-top: 20px;
+  color: #1f2937;
+}
+
+.stack h3:first-child {
+  margin-top: 0;
 }
