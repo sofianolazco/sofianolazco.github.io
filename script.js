@@ -32,6 +32,8 @@ sections.forEach(section => {
 
 // 🌍 Cambio de idioma
 const langToggle = document.getElementById("langToggle");
+const cvButton = document.getElementById("cvButton");
+
 let currentLang = "es";
 
 // 👉 Función para aplicar idioma
@@ -44,13 +46,22 @@ function applyLanguage(lang) {
       el.textContent = translation;
     }
   });
+
+  // 👉 Cambiar archivo del CV según idioma
+  if (lang === "es") {
+    cvButton.href = "CV_Sofia_Nolazco_ES.pdf";
+  } else {
+    cvButton.href = "CV_Sofia_Nolazco_EN.pdf";
+  }
 }
+
 
 // 👉 Cargar español automáticamente al entrar
 document.addEventListener("DOMContentLoaded", () => {
   applyLanguage("es");
   langToggle.textContent = "🇬🇧 EN";
 });
+
 
 // 👉 Toggle de idioma al hacer click
 langToggle.addEventListener("click", () => {
@@ -60,4 +71,5 @@ langToggle.addEventListener("click", () => {
 
   langToggle.textContent = currentLang === "es" ? "🇬🇧 EN" : "🇪🇸 ES";
 });
+
 
