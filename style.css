@@ -269,3 +269,15 @@ body.dark .badge {
   background: rgba(255,255,255,0.25);
 }
 
+.top-controls {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px; /* espacio entre botones */
+  align-items: center;
+}
+
+.top-controls button {
+  cursor: pointer;
+}
