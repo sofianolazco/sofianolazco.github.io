@@ -29,18 +29,35 @@ sections.forEach(section => {
   observer.observe(section);
 });
 
+
 // 🌍 Cambio de idioma
 const langToggle = document.getElementById("langToggle");
 let currentLang = "es";
 
-langToggle.addEventListener("click", () => {
+// 👉 Función para aplicar idioma
+function applyLanguage(lang) {
   const elements = document.querySelectorAll("[data-es]");
 
+  elements.forEach(el => {
+    const translation = el.getAttribute(`data-${lang}`);
+    if (translation) {
+      el.textContent = translation;
+    }
+  });
+}
+
+// 👉 Cargar español automáticamente al entrar
+document.addEventListener("DOMContentLoaded", () => {
+  applyLanguage("es");
+  langToggle.textContent = "🇬🇧 EN";
+});
+
+// 👉 Toggle de idioma al hacer click
+langToggle.addEventListener("click", () => {
   currentLang = currentLang === "es" ? "en" : "es";
 
-  elements.forEach(el => {
-    el.textContent = el.getAttribute(`data-${currentLang}`);
-  });
+  applyLanguage(currentLang);
 
   langToggle.textContent = currentLang === "es" ? "🇬🇧 EN" : "🇪🇸 ES";
 });
+
