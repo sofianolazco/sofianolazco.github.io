@@ -250,3 +250,22 @@ body.dark .badge {
   font-weight: 500;
   border: 1px solid rgba(255,255,255,0.08);
 }
+
+.lang-btn {
+  position: absolute;
+  top: 20px;
+  right: 90px; /* separado del botón dark */
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: none;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: 0.3s ease;
+}
+
+.lang-btn:hover {
+  background: rgba(255,255,255,0.25);
+}
+
