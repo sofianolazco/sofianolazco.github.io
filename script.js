@@ -28,3 +28,19 @@ const observer = new IntersectionObserver(entries => {
 sections.forEach(section => {
   observer.observe(section);
 });
+
+// 🌍 Cambio de idioma
+const langToggle = document.getElementById("langToggle");
+let currentLang = "es";
+
+langToggle.addEventListener("click", () => {
+  const elements = document.querySelectorAll("[data-es]");
+
+  currentLang = currentLang === "es" ? "en" : "es";
+
+  elements.forEach(el => {
+    el.textContent = el.getAttribute(`data-${currentLang}`);
+  });
+
+  langToggle.textContent = currentLang === "es" ? "🇬🇧 EN" : "🇪🇸 ES";
+});
