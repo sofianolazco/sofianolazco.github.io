@@ -442,9 +442,9 @@
 
     /* ===== THEME TOGGLE ===== */
     body.light {
-      --bg: #f5f6f8;
-      --surface: #ffffff;
-      --surface2: #eef0f5;
+      --bg: #f5f0e8;
+      --surface: #fdfaf5;
+      --surface2: #ede8df;
       --border: rgba(0,0,0,0.08);
       --text: #1a1d27;
       --muted: #6b7080;
@@ -462,7 +462,7 @@
       background: radial-gradient(circle, rgba(14,148,136,0.07) 0%, transparent 70%);
     }
     body.light nav {
-      background: rgba(245,246,248,0.9);
+      background: rgba(245,240,232,0.92);
     }
     body.light .btn-primary { color: #fff; }
 
@@ -833,7 +833,7 @@
 
       // Hero
       document.querySelector('.hero-tag').childNodes[0] && 
-        (document.querySelector('.hero-tag').innerHTML = (lang === 'es' ? '<span style="display:inline-block;width:24px;height:1px;background:var(--accent);margin-right:0.5rem;vertical-align:middle"></span>' : '<span style="display:inline-block;width:24px;height:1px;background:var(--accent);margin-right:0.5rem;vertical-align:middle"></span>') + t['hero-tag'] + ' &middot; ' + (lang === 'es' ? 'Santiago de Chile' : 'Santiago, Chile'));
+        (document.querySelector('.hero-tag').innerHTML = '<span style="display:inline-block;width:24px;height:1px;background:var(--accent);margin-right:0.5rem;vertical-align:middle"></span>' + t['hero-tag']);
       document.querySelector('.hero-desc').innerHTML = t['hero-desc'];
       document.querySelector('#btn-projects').textContent = t['btn-projects'];
 
