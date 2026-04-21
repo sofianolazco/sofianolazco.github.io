@@ -832,8 +832,7 @@
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
 
       // Hero
-      document.querySelector('.hero-tag').childNodes[0] && 
-        (document.querySelector('.hero-tag').innerHTML = '<span style="display:inline-block;width:24px;height:1px;background:var(--accent);margin-right:0.5rem;vertical-align:middle"></span>' + t['hero-tag']);
+      document.querySelector('.hero-tag').textContent = t['hero-tag'];
       document.querySelector('.hero-desc').innerHTML = t['hero-desc'];
       document.querySelector('#btn-projects').textContent = t['btn-projects'];
 
