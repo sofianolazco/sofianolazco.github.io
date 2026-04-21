@@ -1,2 +1,2 @@
 # sofianolazco.github.io
-Portfolio de analista de datos
+Portfolio de Analista de Datos | Data Analyst Portfolio
