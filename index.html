@@ -761,6 +761,15 @@
         "section2-title": "Herramientas que uso",
         "section3-label": "03 · Proyectos",
         "section3-title": "Trabajo aplicado",
+        "stack1-desc": "Tablas dinámicas, dashboards interactivos y automatización de reportes",
+        "stack2-desc": "Modelado de datos, DAX, KPIs y visualizaciones interactivas",
+        "stack3-desc": "Carga, limpieza, modelado dimensional y consultas analíticas",
+        "stack4-desc": "Análisis exploratorio de datos y automatización",
+        "stack5-desc": "Dibujo, lectura y revisión de documentación técnica de obra",
+        "stack6-desc": "Integración de herramientas de IA para análisis y documentación técnica",
+        "proj1-h1": "Filtros interactivos", "proj1-h2": "Dashboard financiero", "proj1-h3": "Dashboard operativo", "proj1-h4": "Informe descriptivo · diagnóstico · prescriptivo",
+        "proj2-h1": "+9.000 registros", "proj2-h2": "Variación YoY%", "proj2-h3": "Semáforo SLA", "proj2-h4": "Navegación dinámica",
+        "proj3-h1": "5 tablas modeladas", "proj3-h2": "100% fechas en ISO", "proj3-h3": "Integridad referencial", "proj3-h4": "Lista para análisis",
         "proj1-title": "Dashboard Financiero y Operativo – Clínica Azul",
         "proj1-desc": "Clínica Azul contaba con información dispersa y sin estructura analítica. Diseñé dashboards financiero y operativo en Google Sheets que unificaron los datos y permitieron al equipo directivo monitorear métricas clave: ingresos por tipo de paciente, sesiones por profesional, ocupación de consultorios y rendimiento operativo. Incluye documentación de KPIs e informe analítico ejecutivo.",
         "proj1-link1": "↗ Ver en Google Sheets",
@@ -799,6 +808,15 @@
         "section2-title": "Tools I use",
         "section3-label": "03 · Projects",
         "section3-title": "Applied work",
+        "stack1-desc": "Pivot tables, interactive dashboards and automated reporting",
+        "stack2-desc": "Data modeling, DAX, KPIs and interactive visualizations",
+        "stack3-desc": "Loading, cleaning, dimensional modeling and analytical queries",
+        "stack4-desc": "Exploratory data analysis and automation",
+        "stack5-desc": "Drawing, reading and reviewing technical construction documents",
+        "stack6-desc": "Integration of AI tools for analysis and technical documentation",
+        "proj1-h1": "Interactive filters", "proj1-h2": "Financial dashboard", "proj1-h3": "Operational dashboard", "proj1-h4": "Descriptive · diagnostic · prescriptive report",
+        "proj2-h1": "+9,000 records", "proj2-h2": "YoY% variation", "proj2-h3": "SLA traffic light", "proj2-h4": "Dynamic navigation",
+        "proj3-h1": "5 modeled tables", "proj3-h2": "100% ISO dates", "proj3-h3": "Referential integrity", "proj3-h4": "Ready for analysis",
         "proj1-title": "Financial & Operational Dashboard – Clínica Azul",
         "proj1-desc": "Clínica Azul had scattered, hard-to-interpret data. I designed financial and operational dashboards in Google Sheets that unified the data and gave the management team clear visibility into key metrics: revenue by patient type, sessions per professional, office occupancy, and operational performance. Includes KPI documentation and an executive analytical report.",
         "proj1-link1": "↗ View in Google Sheets",
@@ -830,7 +848,11 @@
       // Nav buttons
       document.getElementById('btn-es').classList.toggle('active', lang === 'es');
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-
+      // Nav links
+      document.querySelectorAll('#nav-links a').forEach(a => {
+        a.textContent = a.getAttribute('data-' + lang);
+      });
+      
       // Hero
       document.querySelector('.hero-tag').textContent = t['hero-tag'];
       document.querySelector('.hero-desc').innerHTML = t['hero-desc'];
@@ -850,7 +872,11 @@
       // Stack section
       document.querySelector('.section-label[data-section="2"]').innerHTML = t['section2-label'] + '<span style="flex:1;height:1px;background:var(--border);margin-left:1rem;display:inline-block"></span>';
       document.querySelector('h2[data-section="2"]').textContent = t['section2-title'];
-
+      
+      const stackDescs = document.querySelectorAll('.stack-desc');
+      for (let i = 1; i <= 6; i++) {
+        stackDescs[i-1].textContent = t['stack'+i+'-desc'];
+      }
       // Projects section
       document.querySelector('.section-label[data-section="3"]').innerHTML = t['section3-label'] + '<span style="flex:1;height:1px;background:var(--border);margin-left:1rem;display:inline-block"></span>';
       document.querySelector('h2[data-section="3"]').textContent = t['section3-title'];
@@ -866,6 +892,14 @@
         const links = projLinks[i-1].querySelectorAll('.project-link');
         if (links[0]) links[0].textContent = t['proj'+i+'-link1'];
         if (links[1]) links[1].textContent = t['proj'+i+'-link2'];
+      }
+
+      const projHighlights = document.querySelectorAll('.project-highlights');
+      for (let i = 1; i <= 3; i++) {
+        const spans = projHighlights[i-1].querySelectorAll('.highlight');
+        spans.forEach((span, idx) => {
+          span.textContent = t['proj'+i+'-h'+(idx+1)];
+        });
       }
 
       // Contact section
