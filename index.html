@@ -439,6 +439,70 @@
       color: var(--muted);
     }
 
+
+    /* ===== THEME TOGGLE ===== */
+    body.light {
+      --bg: #f5f6f8;
+      --surface: #ffffff;
+      --surface2: #eef0f5;
+      --border: rgba(0,0,0,0.08);
+      --text: #1a1d27;
+      --muted: #6b7080;
+      --card-hover: #eef0f5;
+      --accent: #0e9488;
+      --accent2: #2563eb;
+      --accent3: #d97706;
+    }
+    body.light::before {
+      background-image:
+        linear-gradient(rgba(14,148,136,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(14,148,136,0.04) 1px, transparent 1px);
+    }
+    body.light::after {
+      background: radial-gradient(circle, rgba(14,148,136,0.07) 0%, transparent 70%);
+    }
+    body.light nav {
+      background: rgba(245,246,248,0.9);
+    }
+    body.light .btn-primary { color: #fff; }
+
+    /* ===== NAV CONTROLS ===== */
+    .nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .nav-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.85rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .nav-btn:hover {
+      color: var(--text);
+      border-color: var(--accent);
+    }
+    .nav-btn.active {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(79,209,197,0.08);
+    }
+    body.light .nav-btn.active {
+      background: rgba(14,148,136,0.08);
+    }
+    .theme-btn { font-size: 1rem; padding: 0.35rem 0.6rem; }
+
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -467,24 +531,29 @@
 
   <nav>
     <div class="nav-logo">S. Nolazco</div>
-    <ul class="nav-links">
-      <li><a href="#sobre-mi">Sobre mí</a></li>
-      <li><a href="#stack">Stack</a></li>
-      <li><a href="#proyectos">Proyectos</a></li>
-      <li><a href="#contacto">Contacto</a></li>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#sobre-mi" data-es="Sobre mí" data-en="About">Sobre mí</a></li>
+      <li><a href="#stack" data-es="Stack" data-en="Stack">Stack</a></li>
+      <li><a href="#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a></li>
+      <li><a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a></li>
     </ul>
+    <div class="nav-controls">
+      <button class="nav-btn active" id="btn-es" onclick="setLang('es')">🇦🇷 ES</button>
+      <button class="nav-btn" id="btn-en" onclick="setLang('en')">🇬🇧 EN</button>
+      <button class="nav-btn theme-btn" id="theme-btn" onclick="toggleTheme()" title="Cambiar tema">🌙</button>
+    </div>
   </nav>
 
   <!-- HERO -->
   <div class="hero">
     <div class="hero-content">
-      <div class="hero-tag">Analista de Datos </div>
+      <div class="hero-tag">Analista de Datos</div>
       <h1>Sofía<br/><em>Nolazco</em></h1>
       <p class="hero-desc">
         Ingeniera Civil en transición hacia el análisis de datos. Combino años de experiencia en gestión de proyectos y análisis de costos con herramientas modernas de datos para transformar información en insights que apoyan la toma de decisiones.
       </p>
       <div class="hero-ctas">
-        <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
+        <a href="#proyectos" class="btn btn-primary" id="btn-projects">Ver proyectos</a>
         <a href="https://www.linkedin.com/in/maria-sofia-nolazco-4a69a0134/" target="_blank" class="btn btn-ghost">LinkedIn ↗</a>
         <a href="https://github.com/sofianolazco" target="_blank" class="btn btn-ghost">GitHub ↗</a>
       </div>
@@ -496,8 +565,8 @@
 
   <!-- SOBRE MÍ -->
   <section id="sobre-mi">
-    <div class="section-label">01 · Sobre mí</div>
-    <h2>De la obra a los datos</h2>
+    <div class="section-label" data-section="1">01 · Sobre mí</div>
+    <h2 data-section="1">De la obra a los datos</h2>
     <div class="about-text">
       <p>Soy Ingeniera Civil con más de 4 años de experiencia en <strong>control de costos, planificación y gestión de proyectos</strong> en Argentina y España. Trabajé en empresas como Gleeds (Barcelona) y Víctor Contreras S.A. (Buenos Aires), donde desarrollé reportes, presupuestos y análisis de desvíos para optimizar costos y plazos.</p>
       <p>Hoy me formo como <strong>Analista de Datos</strong>, combinando esa base analítica y de negocio con herramientas modernas: Google Sheets, Power BI, SQL y Python. Mi diferencial es entender el contexto del negocio detrás de cada dato.</p>
@@ -525,8 +594,8 @@
 
   <!-- STACK -->
   <section id="stack">
-    <div class="section-label">02 · Stack tecnológico</div>
-    <h2>Herramientas que uso</h2>
+    <div class="section-label" data-section="2">02 · Stack tecnológico</div>
+    <h2 data-section="2">Herramientas que uso</h2>
     <div class="stack-grid">
       <div class="stack-card">
         <div class="stack-icon">📊</div>
@@ -563,8 +632,8 @@
 
   <!-- PROYECTOS -->
   <section id="proyectos">
-    <div class="section-label">03 · Proyectos</div>
-    <h2>Trabajo aplicado</h2>
+    <div class="section-label" data-section="3">03 · Proyectos</div>
+    <h2 data-section="3">Trabajo aplicado</h2>
     <div class="projects-list">
 
       <div class="project-card">
@@ -654,13 +723,13 @@
 
   <!-- CONTACTO -->
   <section id="contacto">
-    <div class="section-label">04 · Contacto</div>
+    <div class="section-label" data-section="4">04 · Contacto</div>
     <div class="contact-inner">
-      <h2>Disponible para oportunidades en Data</h2>
+      <h2 data-section="4">Disponible para oportunidades en Data</h2>
       <p>Estoy en búsqueda activa de mi primer puesto como Analista de Datos. Me interesa formar parte de equipos donde pueda aportar valor a través del análisis de datos y la optimización de procesos.<br/>Si te interesa mi perfil, no dudes en contactarme.</p>
       <div class="contact-links">
         <a href="mailto:sofinolazco@gmail.com" class="btn btn-primary">✉ sofinolazco@gmail.com</a>
-        <a href="https://www.linkedin.com/in/maria-sofia-nolazco-4a69a0134/" target="_blank" class="btn btn-ghost">LinkedIn ↗</a>
+        <a href="https://www.linkedin.com/in/maria-sofia-nolazco-4a69a0134" target="_blank" class="btn btn-ghost">LinkedIn ↗</a>
         <a href="https://github.com/sofianolazco" target="_blank" class="btn btn-ghost">GitHub ↗</a>
       </div>
     </div>
@@ -670,5 +739,154 @@
     <p>Sofía Nolazco · Analista de Datos · 2026</p>
   </footer>
 
+
+  <script>
+    // ===== TRANSLATIONS =====
+    const translations = {
+      es: {
+        "hero-tag": "Analista de Datos",
+        "h1-line1": "Sofía",
+        "hero-desc": "Ingeniera Civil en transición hacia el análisis de datos. Combino años de experiencia en gestión de proyectos y análisis de costos con herramientas modernas de datos para transformar información en insights que apoyan la toma de decisiones.",
+        "btn-projects": "Ver proyectos",
+        "section1-label": "01 · Sobre mí",
+        "section1-title": "De la obra a los datos",
+        "about-p1": "Ingeniera Civil con más de 4 años de experiencia en <strong>control de costos, planificación y gestión de proyectos</strong> en Argentina y España. Trabajé en empresas como Gleeds (Barcelona) y Víctor Contreras S.A. (Buenos Aires), donde desarrollé reportes, presupuestos y análisis de desvíos para optimizar costos y plazos.",
+        "about-p2": "Hoy me formo como <strong>Analista de Datos</strong>, combinando esa base analítica y de negocio con herramientas modernas: Google Sheets, Power BI, SQL y Python. Mi diferencial es entender el contexto del negocio detrás de cada dato.",
+        "about-p3": "Me destaco por ser <strong>estructurada, detallista y orientada a resultados</strong>, con buena comunicación en equipos multidisciplinarios.",
+        "stat1-label": "Años de experiencia en proyectos",
+        "stat2-label": "Países donde trabajé",
+        "stat3-label": "Proyectos de datos completados",
+        "stat4-label": "Herramientas de datos dominadas",
+        "section2-label": "02 · Stack tecnológico",
+        "section2-title": "Herramientas que uso",
+        "section3-label": "03 · Proyectos",
+        "section3-title": "Trabajo aplicado",
+        "proj1-title": "Dashboard Financiero y Operativo – Clínica Azul",
+        "proj1-desc": "Clínica Azul contaba con información dispersa y sin estructura analítica. Diseñé dashboards financiero y operativo en Google Sheets que unificaron los datos y permitieron al equipo directivo monitorear métricas clave: ingresos por tipo de paciente, sesiones por profesional, ocupación de consultorios y rendimiento operativo. Incluye documentación de KPIs e informe analítico ejecutivo.",
+        "proj1-link1": "↗ Ver en Google Sheets",
+        "proj1-link2": "⌥ Ver en GitHub",
+        "proj2-title": "Análisis Operativo de Tickets de Servicio – ServiTech",
+        "proj2-desc": "Análisis de más de 9.000 solicitudes de soporte técnico entre 2020 y 2023. El dashboard interactivo — estructurado en 4 páginas con navegación dinámica — permite identificar cuellos de botella, detectar picos de actividad y evaluar el cumplimiento de SLA por gestor. Incluye medida DAX de variación interanual (YoY%) y semáforo visual de desempeño.",
+        "proj2-link1": "↗ Ver dashboard Power BI",
+        "proj2-link2": "⌥ Ver en GitHub",
+        "proj3-title": "Carga, Modelado y Limpieza de Datos – Classic Models",
+        "proj3-desc": "Proyecto de preparación de base de datos para Classic Models, empresa de réplicas de vehículos. Implementé un modelo dimensional (estrella) con 5 tablas: 3 dimensionales y 2 de hechos. Realicé limpieza de datos, estandarización de fechas, traducción de categorías, separación de campos y consolidación de direcciones. La base quedó lista para análisis de ventas, comportamiento de clientes e inventario.",
+        "proj3-link1": "↗ Ver código SQL",
+        "proj3-link2": "⌥ Ver en GitHub",
+        "proj4-title": "Próximo proyecto · Python",
+        "proj4-desc": "Proyecto de análisis exploratorio de datos con Python en desarrollo como parte de mi formación en Data Analytics.",
+        "section4-label": "04 · Contacto",
+        "contact-title": "Disponible para oportunidades en Data",
+        "contact-desc": "Estoy en búsqueda activa de mi primer puesto como Analista de Datos. Me interesa formar parte de equipos donde pueda aportar valor a través del análisis de datos y la optimización de procesos.<br/>Si te interesa mi perfil, no dudes en contactarme.",
+        "contact-btn": "✉ sofinolazco@gmail.com",
+        "footer-text": "Sofía Nolazco · Analista de Datos · 2026"
+      },
+      en: {
+        "hero-tag": "Data Analyst",
+        "h1-line1": "Sofía",
+        "hero-desc": "Civil Engineer transitioning into data analytics. I combine years of experience in cost and project management with modern data tools to transform scattered information into concrete decisions.",
+        "btn-projects": "View projects",
+        "section1-label": "01 · About me",
+        "section1-title": "From construction to data",
+        "about-p1": "I'm a Civil Engineer with over 4 years of experience in <strong>cost control, planning, and project management</strong> across Argentina and Spain. I worked at companies like Gleeds (Barcelona) and Víctor Contreras S.A. (Buenos Aires), developing reports, budgets, and deviation analyses to optimize costs and timelines.",
+        "about-p2": "I'm now training as a <strong>Data Analyst</strong>, combining that analytical and business background with modern tools: Google Sheets, Power BI, SQL, and Python. My edge is understanding the business context behind every dataset.",
+        "about-p3": "I'm <strong>structured, detail-oriented, and results-driven</strong>, with strong communication skills in multidisciplinary teams.",
+        "stat1-label": "Years of project experience",
+        "stat2-label": "Countries I've worked in",
+        "stat3-label": "Data projects completed",
+        "stat4-label": "Data tools mastered",
+        "section2-label": "02 · Tech stack",
+        "section2-title": "Tools I use",
+        "section3-label": "03 · Projects",
+        "section3-title": "Applied work",
+        "proj1-title": "Financial & Operational Dashboard – Clínica Azul",
+        "proj1-desc": "Clínica Azul had scattered, hard-to-interpret data. I designed financial and operational dashboards in Google Sheets that unified the data and gave the management team clear visibility into key metrics: revenue by patient type, sessions per professional, office occupancy, and operational performance. Includes KPI documentation and an executive analytical report.",
+        "proj1-link1": "↗ View in Google Sheets",
+        "proj1-link2": "⌥ View on GitHub",
+        "proj2-title": "Service Ticket Operational Analysis – ServiTech",
+        "proj2-desc": "Analysis of over 9,000 support requests between 2020 and 2023. The interactive dashboard — structured in 4 pages with dynamic navigation — identifies bottlenecks, detects activity peaks, and evaluates SLA compliance by agent. Includes a DAX year-over-year measure (YoY%) and a visual SLA traffic light.",
+        "proj2-link1": "↗ View Power BI dashboard",
+        "proj2-link2": "⌥ View on GitHub",
+        "proj3-title": "Data Loading, Modeling & Cleaning – Classic Models",
+        "proj3-desc": "Database preparation project for Classic Models, a miniature vehicle replica company. I implemented a dimensional (star) model with 5 tables: 3 dimension tables and 2 fact tables. Performed data cleaning, date standardization, category translation, field separation, and address consolidation. The database is ready for sales, customer behavior, and inventory analysis.",
+        "proj3-link1": "↗ View SQL code",
+        "proj3-link2": "⌥ View on GitHub",
+        "proj4-title": "Upcoming project · Python",
+        "proj4-desc": "Exploratory data analysis project with Python currently in development as part of my Data Analytics training.",
+        "section4-label": "04 · Contact",
+        "contact-title": "Available for opportunities in Data",
+        "contact-desc": "Actively looking for my first position as a Data Analyst. I'm interested in joining teams where I can add value through data analysis and process optimization.<br/>If you are interested in my profile, please feel free to contact me.",
+        "contact-btn": "✉ sofinolazco@gmail.com",
+        "footer-text": "Sofía Nolazco · Data Analyst · 2026"
+      }
+    };
+
+    let currentLang = 'es';
+
+    function setLang(lang) {
+      currentLang = lang;
+      const t = translations[lang];
+
+      // Nav buttons
+      document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+      // Hero
+      document.querySelector('.hero-tag').childNodes[0] && 
+        (document.querySelector('.hero-tag').innerHTML = (lang === 'es' ? '<span style="display:inline-block;width:24px;height:1px;background:var(--accent);margin-right:0.5rem;vertical-align:middle"></span>' : '<span style="display:inline-block;width:24px;height:1px;background:var(--accent);margin-right:0.5rem;vertical-align:middle"></span>') + t['hero-tag'] + ' &middot; ' + (lang === 'es' ? 'Santiago de Chile' : 'Santiago, Chile'));
+      document.querySelector('.hero-desc').innerHTML = t['hero-desc'];
+      document.querySelector('#btn-projects').textContent = t['btn-projects'];
+
+      // About section
+      document.querySelector('.section-label[data-section="1"]').innerHTML = t['section1-label'] + '<span style="flex:1;height:1px;background:var(--border);margin-left:1rem;display:inline-block"></span>';
+      document.querySelector('h2[data-section="1"]').textContent = t['section1-title'];
+      document.querySelectorAll('.about-text p')[0].innerHTML = t['about-p1'];
+      document.querySelectorAll('.about-text p')[1].innerHTML = t['about-p2'];
+      document.querySelectorAll('.about-text p')[2].innerHTML = t['about-p3'];
+      document.querySelectorAll('.stat-label')[0].textContent = t['stat1-label'];
+      document.querySelectorAll('.stat-label')[1].textContent = t['stat2-label'];
+      document.querySelectorAll('.stat-label')[2].textContent = t['stat3-label'];
+      document.querySelectorAll('.stat-label')[3].textContent = t['stat4-label'];
+
+      // Stack section
+      document.querySelector('.section-label[data-section="2"]').innerHTML = t['section2-label'] + '<span style="flex:1;height:1px;background:var(--border);margin-left:1rem;display:inline-block"></span>';
+      document.querySelector('h2[data-section="2"]').textContent = t['section2-title'];
+
+      // Projects section
+      document.querySelector('.section-label[data-section="3"]').innerHTML = t['section3-label'] + '<span style="flex:1;height:1px;background:var(--border);margin-left:1rem;display:inline-block"></span>';
+      document.querySelector('h2[data-section="3"]').textContent = t['section3-title'];
+
+      const projTitles = document.querySelectorAll('.project-title');
+      const projDescs = document.querySelectorAll('.project-desc');
+      for (let i = 1; i <= 4; i++) {
+        projTitles[i-1].textContent = t['proj'+i+'-title'];
+        projDescs[i-1].textContent = t['proj'+i+'-desc'];
+      }
+      const projLinks = document.querySelectorAll('.project-links');
+      for (let i = 1; i <= 3; i++) {
+        const links = projLinks[i-1].querySelectorAll('.project-link');
+        if (links[0]) links[0].textContent = t['proj'+i+'-link1'];
+        if (links[1]) links[1].textContent = t['proj'+i+'-link2'];
+      }
+
+      // Contact section
+      document.querySelector('.section-label[data-section="4"]').innerHTML = t['section4-label'] + '<span style="flex:1;height:1px;background:var(--border);margin-left:1rem;display:inline-block"></span>';
+      document.querySelector('h2[data-section="4"]').textContent = t['contact-title'];
+      document.querySelector('.contact-inner p').innerHTML = t['contact-desc'];
+      document.querySelector('.contact-links .btn-primary').textContent = t['contact-btn'];
+      document.querySelector('footer p').textContent = t['footer-text'];
+
+      // CV download
+      const cvBtn = document.getElementById('cv-download');
+      cvBtn.href = cvBtn.getAttribute('data-'+lang+'-href');
+      cvBtn.textContent = cvBtn.getAttribute('data-'+lang+'-label');
+    }
+
+    // ===== THEME TOGGLE =====
+    function toggleTheme() {
+      const isLight = document.body.classList.toggle('light');
+      document.getElementById('theme-btn').textContent = isLight ? '☀️' : '🌙';
+    }
+  </script>
 </body>
 </html>
