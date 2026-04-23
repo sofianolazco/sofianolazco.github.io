@@ -590,7 +590,7 @@
         <div class="stat-label">Países donde trabajé</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number">3</div>
+        <div class="stat-number">4</div>
         <div class="stat-label">Proyectos de datos completados</div>
       </div>
       <div class="stat-card">
@@ -714,6 +714,30 @@
         <div class="project-num">03</div>
       </div>
 
+<div class="project-card sql">
+        <div>
+          <div class="project-badges">
+            <span class="badge blue">SQL</span>
+            <span class="badge blue">MySQL</span>
+            <span class="badge blue">AWS RDS</span>
+            <span class="badge blue">CTEs</span>
+          </div>
+          <div class="project-title">Análisis de CRM de Ventas – MavenTech</div>
+          <p class="project-desc">MavenTech utilizaba un CRM para registrar oportunidades de venta pero no contaba con herramientas para analizarlas. Respondí 11 preguntas de negocio sobre el rendimiento del equipo en Q4 2017: valor total y promedio de ventas, tiempo de cierre, tasa de conversión por agente y comparación entre trimestres. Utilicé CTEs encadenadas, lógica condicional y subconsultas para consolidar múltiples métricas en tablas únicas.</p>
+          <div class="project-highlights">
+            <span class="highlight">11 preguntas de negocio</span>
+            <span class="highlight">CTEs encadenadas</span>
+            <span class="highlight">Comparación Q4 vs Q3</span>
+            <span class="highlight">Conexión AWS RDS</span>
+          </div>
+          <div class="project-links">
+            <a href="https://drive.google.com/file/d/1oyLvxWoi9wJHJwVlYcMzOLzTid1Si2G1/view?usp=sharing" target="_blank" class="project-link blue">↗ Ver código SQL</a>
+            <a href="https://github.com/sofianolazco/crm-maventech-sql" target="_blank" class="project-link blue">⌥ Ver en GitHub</a>
+          </div>
+        </div>
+        <div class="project-num">04</div>
+      </div>
+
       <div class="project-card coming">
         <div>
           <div class="project-badges">
@@ -723,7 +747,7 @@
           <div class="project-title">Próximo proyecto · Python</div>
           <p class="project-desc">Proyecto de análisis exploratorio de datos con Python en desarrollo como parte de mi formación en Data Analytics.</p>
         </div>
-        <div class="project-num">04</div>
+        <div class="project-num">05</div>
       </div>
 
     </div>
@@ -790,8 +814,13 @@
         "proj3-desc": "Proyecto de preparación de base de datos para Classic Models, empresa de réplicas de vehículos. Implementé un modelo dimensional (estrella) con 5 tablas: 3 dimensionales y 2 de hechos. Realicé limpieza de datos, estandarización de fechas, traducción de categorías, separación de campos y consolidación de direcciones. La base quedó lista para análisis de ventas, comportamiento de clientes e inventario.",
         "proj3-link1": "↗ Ver código SQL",
         "proj3-link2": "⌥ Ver en GitHub",
-        "proj4-title": "Próximo proyecto · Python",
-        "proj4-desc": "Proyecto de análisis exploratorio de datos con Python en desarrollo como parte de mi formación en Data Analytics.",
+        "proj4-h1": "11 preguntas de negocio", "proj4-h2": "CTEs encadenadas", "proj4-h3": "Comparación Q4 vs Q3", "proj4-h4": "Conexión AWS RDS",
+        "proj4-title": "Análisis de CRM de Ventas – MavenTech",
+        "proj4-desc": "MavenTech utilizaba un CRM para registrar oportunidades de venta pero no contaba con herramientas para analizarlas. Respondí 11 preguntas de negocio sobre el rendimiento del equipo en Q4 2017: valor total y promedio de ventas, tiempo de cierre, tasa de conversión por agente y comparación entre trimestres. Utilicé CTEs encadenadas, lógica condicional y subconsultas para consolidar múltiples métricas en tablas únicas.",
+        "proj4-link1": "↗ Ver código SQL",
+        "proj4-link2": "⌥ Ver en GitHub",
+        "proj5-title": "Próximo proyecto · Python",
+        "proj5-desc": "Proyecto de análisis exploratorio de datos con Python en desarrollo como parte de mi formación en Data Analytics.",
         "section4-label": "04 · Contacto",
         "contact-title": "Disponible para oportunidades en Data",
         "contact-desc": "Estoy en búsqueda activa de mi primer puesto como Analista de Datos. Me interesa formar parte de equipos donde pueda aportar valor a través del análisis de datos y la optimización de procesos.<br/>Si te interesa mi perfil, no dudes en contactarme.",
@@ -837,8 +866,13 @@
         "proj3-desc": "Database preparation project for Classic Models, a miniature vehicle replica company. I implemented a dimensional (star) model with 5 tables: 3 dimension tables and 2 fact tables. Performed data cleaning, date standardization, category translation, field separation, and address consolidation. The database is ready for sales, customer behavior, and inventory analysis.",
         "proj3-link1": "↗ View SQL code",
         "proj3-link2": "⌥ View on GitHub",
-        "proj4-title": "Upcoming project · Python",
-        "proj4-desc": "Exploratory data analysis project with Python currently in development as part of my Data Analytics training.",
+        "proj4-h1": "11 business questions", "proj4-h2": "Chained CTEs", "proj4-h3": "Q4 vs Q3 comparison", "proj4-h4": "AWS RDS connection",
+        "proj4-title": "Sales CRM Analysis – MavenTech",
+        "proj4-desc": "MavenTech used a CRM to log sales opportunities but had no tools to analyze them. I answered 11 business questions about team performance in Q4 2017: total and average sales value, closing time, conversion rate per agent, and period-over-period comparison. I used chained CTEs, conditional logic, and subqueries to consolidate multiple metrics into single output tables.",
+        "proj4-link1": "↗ View SQL code",
+        "proj4-link2": "⌥ View on GitHub",
+        "proj5-title": "Upcoming project · Python",
+        "proj5-desc": "Exploratory data analysis project with Python currently in development as part of my Data Analytics training.",
         "section4-label": "04 · Contact",
         "contact-title": "Available for opportunities in Data",
         "contact-desc": "Actively looking for my first position as a Data Analyst. I'm interested in joining teams where I can add value through data analysis and process optimization.<br/>If you are interested in my profile, please feel free to contact me.",
@@ -891,19 +925,19 @@
 
       const projTitles = document.querySelectorAll('.project-title');
       const projDescs = document.querySelectorAll('.project-desc');
-      for (let i = 1; i <= 4; i++) {
+      for (let i = 1; i <= 5; i++) {
         projTitles[i-1].textContent = t['proj'+i+'-title'];
         projDescs[i-1].textContent = t['proj'+i+'-desc'];
       }
       const projLinks = document.querySelectorAll('.project-links');
-      for (let i = 1; i <= 3; i++) {
+      for (let i = 1; i <= 4; i++) {
         const links = projLinks[i-1].querySelectorAll('.project-link');
         if (links[0]) links[0].textContent = t['proj'+i+'-link1'];
         if (links[1]) links[1].textContent = t['proj'+i+'-link2'];
       }
 
       const projHighlights = document.querySelectorAll('.project-highlights');
-      for (let i = 1; i <= 3; i++) {
+      for (let i = 1; i <= 4; i++) {
         const spans = projHighlights[i-1].querySelectorAll('.highlight');
         spans.forEach((span, idx) => {
           span.textContent = t['proj'+i+'-h'+(idx+1)];
